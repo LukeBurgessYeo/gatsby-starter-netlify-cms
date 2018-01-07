@@ -2,8 +2,8 @@ import React from 'react';
 
 export default ({ testimonials }) => (
   <div>
-    {testimonials.map(testimonial => (
-      <article className="message">
+    {testimonials.map((testimonial, i) => (
+      <article className="message" key={i}>
         <div className="message-body">
           {testimonial.quote}
           <br />

@@ -3,7 +3,7 @@ import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
 
-export const ProductPageTemplate = ({
+export const ContactPageTemplate = ({
     image, title, heading, description, intro, main, testimonials, fullImage, pricing
   }) => {
     return <section className="section section--gradient">
@@ -92,7 +92,7 @@ export const ProductPageTemplate = ({
 
 export default ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  return <ProductPageTemplate
+  return <ContactPageTemplate
     image={frontmatter.image}
     title={frontmatter.title}
     heading={frontmatter.heading}
@@ -105,8 +105,8 @@ export default ({ data }) => {
   />;
 };
 
-export const productPageQuery = graphql`
-  query ProductPage($path: String!) {
+export const contactPageQuery = graphql`
+  query contactPage($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
