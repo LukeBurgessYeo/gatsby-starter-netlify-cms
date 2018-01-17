@@ -6,7 +6,7 @@ import Testimonials from 'site/components/Testimonials'
 import Pricing from 'site/components/Pricing'
 
 import { AboutPageTemplate } from 'site/templates/about-page';
-import { ContactPageTemplate } from 'site/templates/contact-page';
+import { ProductPageTemplate } from 'site/templates/product-page';
 import { BlogPostTemplate } from 'site/templates/blog-post';
 
 const AboutPagePreview = ({ entry, widgetFor }) =>
@@ -20,7 +20,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => (
   />
 )
 
-const ContactPagePreview = ({ entry, widgetFor, getAsset }) => {
+const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
   const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
@@ -30,7 +30,7 @@ const ContactPagePreview = ({ entry, widgetFor, getAsset }) => {
   const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
   const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
-  return <ContactPageTemplate
+  return <ProductPageTemplate
     image={entry.getIn(['data', 'image'])}
     title={entry.getIn(['data', 'title'])}
     heading={entry.getIn(['data', 'heading'])}
@@ -64,5 +64,5 @@ const ContactPagePreview = ({ entry, widgetFor, getAsset }) => {
 
 CMS.registerPreviewStyle('/styles.css')
 CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('contact', ContactPagePreview)
+CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)

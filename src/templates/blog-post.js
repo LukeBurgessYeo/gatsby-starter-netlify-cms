@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Content, { HTMLContent } from '../components/Content';
 import Helmet from 'react-helmet';
 
@@ -13,8 +12,6 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
           <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
           <p>{description}</p>
           <PostContent content={content} />
-          <hr />
-          <Link className="button is-small" to="/">← back</Link>
         </div>
       </div>
     </div>
@@ -27,7 +24,7 @@ export default ({ data }) => {
     content={post.html}
     contentComponent={HTMLContent}
     description={post.frontmatter.description}
-    helmet={<Helmet title={`Broo Guud Coffee | ${post.frontmatter.title}`} />}
+    helmet={<Helmet title={`Blog | ${post.frontmatter.title}`} />}
     title={post.frontmatter.title}
   />;
 }
